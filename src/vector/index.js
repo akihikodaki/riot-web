@@ -43,9 +43,6 @@ window.addEventListener('beforeunload', (e) => {
  // add React and ReactPerf to the global namespace, to make them easier to
  // access via the console
 global.React = require("react");
-if (process.env.NODE_ENV !== 'production') {
-    global.Perf = require("react-addons-perf");
-}
 
 var RunModernizrTests = require("./modernizr"); // this side-effects a global
 var ReactDOM = require("react-dom");
