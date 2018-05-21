@@ -19,13 +19,10 @@ var React = require("react");
 var sanitizeHtml = require("sanitize-html");
 import { _t } from 'matrix-react-sdk/lib/languageHandler';
 
-module.exports = React.createClass({
-    displayName: 'VectorCustomServerDialog',
-    statics: {
-        replaces: 'CustomServerDialog',
-    },
+export default class VectorCustomServerDialog extends React.PureComponent {
+    static replaces = 'CustomServerDialog';
 
-    render: function() {
+    render() {
         return (
             <div className="mx_ErrorDialog">
                 <div className="mx_Dialog_title">
@@ -48,4 +45,4 @@ module.exports = React.createClass({
             </div>
         );
     }
-});
+}

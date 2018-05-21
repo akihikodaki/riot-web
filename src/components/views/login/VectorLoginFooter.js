@@ -20,13 +20,10 @@ var React = require('react');
 import { _t } from 'matrix-react-sdk/lib/languageHandler';
 import SettingsStore from 'matrix-react-sdk/lib/settings/SettingsStore';
 
-module.exports = React.createClass({
-    displayName: 'VectorLoginFooter',
-    statics: {
-        replaces: 'LoginFooter',
-    },
+export default class VectorLoginFooter extends React.PureComponent {
+    static replaces = 'LoginFooter';
 
-    render: function() {
+    render() {
         // FIXME: replace this with a proper Status skin
         // ...except then we wouldn't be able to switch to the Status theme at runtime.
         if (SettingsStore.getValue("theme") === 'status') return <div/>;
@@ -40,4 +37,4 @@ module.exports = React.createClass({
             </div>
         );
     }
-});
+}
